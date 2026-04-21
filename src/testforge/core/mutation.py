@@ -332,6 +332,8 @@ class MutationSession:
     def add_result(self, result: MutationResult) -> None:
         """Add a result to the session."""
         self.results.append(result)
+        # Add mutation to kill_matrix if not already present
+        self.kill_matrix.add_mutation(result.mutation)
         for test in result.killing_tests:
             self.kill_matrix.add_test(test)
             self.kill_matrix.record_kill(result.mutation.id, test)

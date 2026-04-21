@@ -13,7 +13,7 @@ from .core.mutator import Mutator
 from .core.executor import MutationExecutor
 from .core.analyzer import MutationAnalyzer
 from .core.scorer import EffectivenessScorer
-from .core.kill_matrix import KillMatrix
+from .core.mutation import Mutation, MutationResult, MutationStatus, KillMatrix
 from .operators.registry import OperatorRegistry
 from .analysis.coverage import CoverageAnalyzer
 from .reporting.generator import ReportGenerator

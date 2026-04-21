@@ -5,6 +5,7 @@ Code mutator - applies mutation operators to source code.
 import ast
 import re
 import tempfile
+from enum import Enum
 from pathlib import Path
 from typing import List, Dict, Optional, Set, Tuple, Any, Iterator
 from dataclasses import dataclass, field
@@ -535,9 +536,6 @@ class Mutator:
         mutated_code = self.apply_mutation(mutation)
         with open(output_path, "w", encoding="utf-8") as f:
             f.write(mutated_code)
-
-
-from enum import Enum
 
 
 class CoverageGuidedMutator(Mutator):

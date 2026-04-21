@@ -2,7 +2,7 @@
 
 from abc import ABC, abstractmethod
 from typing import List, Dict, Optional, Any, Tuple
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 import ast
 
 from ..core.mutation import Mutation, OperatorType
@@ -14,8 +14,8 @@ class OperatorConfig:
     enabled: bool = True
     probability: float = 1.0  # Probability of applying this operator
     max_per_file: Optional[int] = None  # Max mutations per file
-    exclude_patterns: List[str] = []  # Patterns to exclude
-    include_patterns: List[str] = []  # Patterns to include
+    exclude_patterns: List[str] = field(default_factory=list)  # Patterns to exclude
+    include_patterns: List[str] = field(default_factory=list)  # Patterns to include
 
 
 class MutationOperator(ABC):

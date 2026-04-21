@@ -40,7 +40,7 @@ class TestTemplate:
     name: str
     template: str
     required_imports: List[str] = field(default_factory=list)
-   适用于: List[str] = field(default_factory=list)  # operator types
+    operator_types: List[str] = field(default_factory=list)  # operator types
 
 
 class TestGenerator:
@@ -64,7 +64,7 @@ def test_{func_name}_{mutation_id}():
     assert result == {expected}, f"Expected {expected}, got {{result}}"
 ''',
                 required_imports=[],
-               适用于=["AOR", "ROR", "LOR", "RVR"],
+               operator_types=["AOR", "ROR", "LOR", "RVR"],
             ),
             TestTemplate(
                 name="edge_case_test",
@@ -76,7 +76,7 @@ def test_{func_name}_edge_case_{mutation_id}():
         {func_name}({edge_case_args})
 ''',
                 required_imports=["pytest"],
-               适用于=["ROR", "AOR"],
+               operator_types=["ROR", "AOR"],
             ),
             TestTemplate(
                 name="boundary_test",
@@ -87,7 +87,7 @@ def test_{func_name}_boundary_{mutation_id}():
     assert {func_name}({boundary_args}) == {expected_boundary}
 ''',
                 required_imports=[],
-               适用于=["ROR"],
+               operator_types=["ROR"],
             ),
             TestTemplate(
                 name="comprehensive_test",
@@ -100,7 +100,7 @@ def test_{func_name}_param_{mutation_id}(input, expected):
     assert {func_name}(input) == expected
 ''',
                 required_imports=["pytest"],
-               适用于=["AOR", "LOR", "ROR", "RVR"],
+               operator_types=["AOR", "LOR", "ROR", "RVR"],
             ),
         ],
     }

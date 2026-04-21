@@ -4,8 +4,7 @@ from .mutator import Mutator
 from .executor import MutationExecutor
 from .analyzer import MutationAnalyzer
 from .scorer import EffectivenessScorer
-from .kill_matrix import KillMatrix
-from .mutation import Mutation, MutationResult, MutationStatus
+from .mutation import Mutation, MutationResult, MutationStatus, KillMatrix
 
 __all__ = [
     "Mutator",

@@ -129,7 +129,7 @@ class MutationAnalyzer:
                 "avg_execution_time": statistics.mean(stats["times"]) if stats["times"] else 0,
             }
         
-        return dict(sorted(analysis.items(), key=lambda x: x[1]["kill_rate"])))
+        return dict(sorted(analysis.items(), key=lambda x: x[1]["kill_rate"]))
     
     def _analyze_by_file(self, session: MutationSession) -> Dict[str, Any]:
         """Analyze results grouped by source file."""
