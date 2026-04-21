@@ -15,6 +15,24 @@
 
 ---
 
+## 🎬 Demo
+![TestForge Demo](demo.gif)
+
+*Mutation testing for test suite quality*
+
+## Screenshots
+| Component | Preview |
+|-----------|---------|
+| Mutation Results | ![results](screenshots/mutation-results.png) |
+| Kill Matrix | ![matrix](screenshots/kill-matrix.png) |
+| Coverage View | ![coverage](screenshots/coverage.png) |
+
+## Visual Description
+Mutation results show killed vs survived mutants with operators. Kill matrix displays test-mutant relationships. Coverage view shows line and branch coverage with mutations.
+
+---
+
+
 ## Table of Contents
 
 1. [Introduction](#introduction)
